@@ -1,34 +1,8 @@
 import Link from "next/link";
 import { ImageContainer, SuccessContainer } from "../../src/styles/pages/success";
-import { stripe } from "../../src/services/stripe";
-import Stripe from "stripe";
 import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
-
-type SessionType = {
-  customerName: string;
-  product: {
-    name: string;
-    imageUrl: string;
-  };
-};
-
-async function getSession(id: string): Promise<SessionType> {
-  const response = await stripe.checkout.sessions.retrieve(id, {
-    expand: ["line_items", "line_items.data.price.product"]
-  });
-
-  const customerName = response.customer_details?.name as string;
-  const product = response.line_items?.data[0].price?.product as Stripe.Product;
-
-  return {
-    customerName,
-    product: {
-      imageUrl: product.images[0],
-      name: product.name
-    }
-  };
-}
+import { getSession } from "../../src/services/stripe";
 
 interface SuccessPageProps {
   searchParams: {
@@ -47,7 +21,7 @@ export default async function SuccessPage({
 
   const { customerName, product } = await getSession(session_id)
     .then(res => res)
-    .catch(res => notFound());
+    .catch(() => notFound());
 
   return (
     <SuccessContainer>
@@ -71,9 +45,3 @@ export default async function SuccessPage({
     </SuccessContainer>
   );
 }
-
-/*<Image
-          src=""
-          alt=""
-          className="object-cover"
-        />*/

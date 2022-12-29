@@ -1,4 +1,4 @@
-import { getProduct } from "./page";
+import { getProduct } from "../../../src/services/stripe";
 
 interface ProductPageHeadProps {
   params: {
