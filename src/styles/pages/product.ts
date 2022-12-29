@@ -11,6 +11,7 @@ export const ProductContainer = w.main(`
   justify-center
   px-8
   flex-col
+  product-container
 `, {});
 
 export const ImageContainer = w.div(`
