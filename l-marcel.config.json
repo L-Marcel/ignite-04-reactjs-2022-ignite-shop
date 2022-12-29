@@ -1,12 +1,18 @@
 {
-  "name": "Template: Next Start",
-  "translatedDescription": "O template criado e usado por mim para iniciar meus projetos. Este modelo foi projetado para desenvolver aplicações com Next, Tailwind, Headless UI e Typescript. Seguindo a abordagem de estilização: CSS in JS.",
-  "pinned": true,
+  "translatedDescription": "Uma aplicação que utiliza a API do Stripe para simular compras em um mercado virtual.",
+  "links": {
+    "figma": "https://www.figma.com/file/0iIYsr8gDtPg7Uu9MLMjPW/Ignite-Shop-(Copy)?node-id=0%3A1&t=m3S3hg8qhKxCPNb0-1"
+  },
+  "progress": 0.6,
   "technologies": [
     "Next.js",
     "React.js",
+    "Windstitch",
+    "Axios",
+    "Stripe",
     "Tailwind",
-    "Headless UI",
+    "Sass",
+    "Eslint",
     "HTML",
     "CSS"
   ]

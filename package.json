@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.6.6",
     "@next/font": "^13.1.1",
+    "axios": "^1.2.2",
+    "keen-slider": "^6.8.5",
     "next": "13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tw-tailwind": "^1.0.21"
+    "stripe": "^11.5.0",
+    "windstitch": "^0.3.0"
   },
   "devDependencies": {
     "@types/node": "18.6.1",
@@ -24,7 +26,7 @@
     "@typescript-eslint/parser": "^5.31.0",
     "autoprefixer": "^10.4.7",
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.3",
+    "eslint-config-next": "^12.0.4",
     "eslint-plugin-react": "^7.30.1",
     "postcss": "^8.4.14",
     "postcss-nesting": "^10.2.0",
