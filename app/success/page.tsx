@@ -15,10 +15,6 @@ export default async function SuccessPage({
     session_id
   }
 }: SuccessPageProps) {
-  if(!session_id) {
-    redirect("/");
-  }
-
   const { customerName, product } = await getSession(session_id)
     .then(res => res)
     .catch(() => notFound());
