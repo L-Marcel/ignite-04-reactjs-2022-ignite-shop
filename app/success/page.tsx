@@ -15,7 +15,6 @@ export default async function SuccessPage({
     session_id
   }
 }: SuccessPageProps) {
-  console.log(session_id);
   if(!session_id) {
     redirect("/");
   }
