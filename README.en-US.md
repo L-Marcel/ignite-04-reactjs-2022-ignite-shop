@@ -11,7 +11,7 @@
       demo
     </a>
     <span>•</span>
-    <a class="navigation-link" href="https://www.figma.com/file/0iIYsr8gDtPg7Uu9MLMjPW/Ignite-Shop-(Copy)?node-id=0%3A1&t=m3S3hg8qhKxCPNb0-1" target="__blank__">
+    <a class="navigation-link" href="https://www.figma.com/file/TlE3XrqudY0GCjrOfGCSMn/Ignite-Shop-2.0-(Copy)?node-id=0%3A1&t=1YXg6yAT9wrxsZ5U-1" target="__blank__">
       figma
     </a>
   </nav>
