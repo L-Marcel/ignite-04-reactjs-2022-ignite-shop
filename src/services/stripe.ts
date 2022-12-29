@@ -46,13 +46,15 @@ export type SessionType = {
 };
 
 export async function getSession(id: string): Promise<SessionType> {
+  console.log("Requesting");
   const response = await stripe.checkout.sessions.retrieve(id, {
     expand: ["line_items", "line_items.data.price.product"]
   });
 
+  console.log("Customer");
   const customerName = response.customer_details?.name as string;
   const product = response.line_items?.data[0].price?.product as Stripe.Product;
-
+  
   return {
     customerName,
     product: {
