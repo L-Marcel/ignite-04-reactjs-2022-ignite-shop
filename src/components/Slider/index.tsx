@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { SliderContainer, Product, ProductFooter } from "./styles";
 import { useKeenSlider } from "keen-slider/react";
-import { ProductType } from "../../../app/page";
 import Link from "next/link";
+import { ProductType } from "../../services/stripe";
 
 interface SliderProps {
   products: ProductType[];
