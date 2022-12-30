@@ -1,11 +1,13 @@
-"use client";
-
 import Image from "next/image";
 import { SliderContainer, Product, ProductFooter } from "./styles";
 import { useKeenSlider } from "keen-slider/react";
 import Link from "next/link";
 import { ProductType } from "../../services/stripe";
-
+import { IconButton } from "../IconButton/index";
+import { SliderKeyboardControls } from "../../services/accessibility";
+import { MouseEvent } from "react";
+import { useSlider } from "../../context/hooks/useSlider";
+import { useProducts } from "../../context/hooks/useProducts";
 interface SliderProps {
   products: ProductType[];
 }
@@ -13,44 +15,39 @@ interface SliderProps {
 export function Slider({
   products
 }: SliderProps) {
-  const [sliderRef] = useKeenSlider({
-    slides: {
-      perView: 1.5,
-      spacing: 36,
-      origin: .1
-    },
-    breakpoints: {
-      "(min-width: 650px)": {
-        slides: {
-          perView: 1.8,
-          spacing: 36,
-          origin: .1
-        }
-      },
-      "(min-width: 860px)": {
-        slides: {
-          perView: 2,
-          spacing: 36,
-          origin: .1
-        }
-      },
-      "(min-width: 1000px)": {
-        slides: {
-          perView: 3.8,
-          spacing: 36,
-          origin: .1
-        }
-      }
-    }
-  });
+  const { products: productsInCart, addProductAmount } = useProducts();
+  const [sliderRef] = useSlider();
+
+  function handleOnNavigate(e: MouseEvent) {
+    e.stopPropagation();
+  }
+
+  function handleOnAddInCart(e: MouseEvent, product: ProductType) {
+    handleOnNavigate(e);
+    e.preventDefault();
+    addProductAmount(product);
+  }
 
   return (
-    <SliderContainer className="keen-slider" ref={sliderRef}>
+    <SliderContainer onClick={handleOnNavigate} className="keen-slider" ref={sliderRef}>
       {
-        products.map(({ id, name, price, imageUrl }) => {
+        products.map((product) => {
+          const { id, name, formattedPrice, imageUrl } = product;
+          const alreadyInCart = productsInCart
+            .filter(product => product.amount > 0)
+            .some(product => product.id == id);
+
+          function handleOnClickToAddInCart(e: MouseEvent) {
+            handleOnAddInCart(e, product);
+          }
+
           return (
-            <Link key={id} href={`/product/${id}`}>
-              <Product className="keen-slider__slide" >
+            <Link 
+              className="product-item-container keen-slider__slide" 
+              key={id} 
+              href={`/product/${id}`}
+            >
+              <Product>
                 <Image 
                   className="object-contain" 
                   src={imageUrl}
@@ -61,8 +58,19 @@ export function Slider({
                   placeholder="blur"
                 />
                 <ProductFooter>
-                  <strong>{name}</strong>
-                  <span>{price}</span>
+                  <div>
+                    <strong>{name}</strong>
+                    <span>{formattedPrice}</span>
+                  </div>
+
+                  <IconButton
+                    onClick={handleOnClickToAddInCart}
+                    icon={alreadyInCart? "Plus":"Handbag"}
+                    theme="green"
+                    iconProps={{
+                      weight: "bold",
+                    }}
+                  />  
                 </ProductFooter>
               </Product>
             </Link>

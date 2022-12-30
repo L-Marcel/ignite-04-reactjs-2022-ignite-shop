@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 @layer base {
+  *:focus, *:focus-visible {
+    @apply
+      outline-none
+      ring-2
+      ring-green-500
+      ring-offset-gray-900
+      ring-offset-2;
+  }
+
+  button, a {
+    @apply
+      disabled:opacity-60
+      disabled:cursor-not-allowed;
+  }
+
   html {
     @apply 
       font-roboto
@@ -27,55 +42,6 @@
 }
 
 @layer components {
-  .product-footer {
-    strong {
-      @apply
-        text-base
-        sm:text-lg
-        lg:text-xl;
-    }
-    
-    span {
-      @apply
-        text-base
-        sm:text-lg
-        md:text-xl
-        lg:text-2xl
-        font-bold
-        text-green-300;
-    }
-  }
-  
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .product-item {
-    animation: fade-in 1s ease-in-out 0s;
-
-    @apply
-      overflow-hidden;
-      
-    @apply
-      max-h-[70vh]
-      min-h-[50vh]
-      xl:min-h-[60vh] #{!important};
-
-    &:hover .product-footer {
-      @apply
-        translate-y-0
-        opacity-100;
-    }
-  }
-
   .product-details {
     h1 {
       @apply
@@ -97,55 +63,21 @@
         text-emerald-50
         text-gray-300;
     }
-
-    button {
-      @apply
-        mt-auto
-        bg-green-500
-        border-0
-        text-white
-        rounded-lg
-        mt-5
-        cursor-pointer
-        p-5
-        font-bold
-        text-lg
-        disabled:opacity-60
-        disabled:cursor-not-allowed
-        [&:not(:disabled)]:hover:bg-green-300;
-    }
-  }
-
-  .success-container {
-    h1 {
-      @apply
-        text-2xl
-        font-bold
-        text-gray-100
-        mb-10;
-    }
-
-    p {
-      @apply
-        text-xl
-        text-gray-300
-        mx-8
-        max-w-[560px]
-        text-center
-        mt-8;
-    }
-
-    a {
-      @apply
-        block
-        mt-12
-        text-lg
-        text-green-500;
-
-      &:hover {
-        @apply
-          text-green-300;
-      }
-    }
   }
 }
+
+@layer utilities {
+  .responsive-rounded-xl {
+    @apply
+      rounded-2xl
+      md:rounded-xl
+      xl:rounded-lg;
+  }
+
+  .bg-gradient {
+    @apply
+      bg-gradient-to-b
+      from-[#1ea483]
+      to-[#7465d4];
+  }
+};

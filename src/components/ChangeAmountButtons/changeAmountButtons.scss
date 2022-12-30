@@ -1,0 +1,73 @@
+@layer components {
+  .buttons-with-low-opacity {
+    button {
+      @apply
+        opacity-80;
+    }
+  }
+
+  .buttons-horizontal-group {
+    & > button {
+      @apply
+        rounded-none;
+      
+      &:hover {
+        @apply
+          opacity-100;
+      }
+
+      &:focus, &:focus-visible {
+        @apply
+          ring-0
+          ring-offset-0
+          text-gray-700
+          bg-green-500;
+      };
+    };
+
+    & > button:first-of-type {
+      @apply
+        rounded-tl-md
+        rounded-bl-md;
+    };
+
+    & > button:last-of-type {
+      @apply
+        rounded-tr-md
+        rounded-br-md;
+    };
+  }
+
+  .buttons-vertical-group {
+    & > button {
+      @apply
+        rounded-none;
+
+      &:hover {
+        @apply
+          opacity-100;
+      }
+
+      &:focus, &:focus-visible {
+        @apply
+          ring-0
+          ring-offset-0
+          text-gray-700
+          opacity-100
+          bg-green-500;
+      };
+    };
+
+    & > button:first-of-type {
+      @apply
+        rounded-tr-md
+        rounded-tl-md;
+    };
+
+    & > button:last-of-type {
+      @apply
+        rounded-br-md
+        rounded-bl-md;
+    };
+  }
+}

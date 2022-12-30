@@ -1,0 +1,167 @@
+@layer components {
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
+
+  @keyframes push-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: translateX(0%);
+    }
+  }
+
+  .overlay {
+    @apply
+      fixed
+      inset-0
+      bg-gray-900/60;
+
+    animation: fade-in .2s ease-in-out;
+  }
+
+  .drawer {
+    @apply
+      scrollbar-thin
+      scrollbar-thumb-green-500
+      fixed
+      right-0
+      top-0
+      h-screen
+      max-h-screen
+      bg-gray-800
+      w-[400px]
+      focus:ring-0
+      ring-offset-0
+      max-w-[100vw]
+      px-10
+      py-10
+      2xl:py-12
+      2xl:px-12
+      2xl:w-[480px]
+      flex
+      flex-col
+      justify-between;
+    
+    box-shadow: -15px 10px 40px black !important;
+    animation: push-left .2s ease-in-out;
+
+    *:focus, *:focus-visible {
+      @apply
+        ring-offset-gray-800;
+    }
+
+    header {
+      button {
+        @apply
+          fixed
+          top-6
+          right-6
+          cursor-pointer
+          rounded-md
+          disabled:cursor-not-allowed
+          disabled:opacity-60;
+      }
+
+      h2 {
+        @apply
+          font-bold
+          text-xl
+          2xl:text-3xl;
+      }
+    }
+
+    main {
+      ul {
+        @apply
+          flex
+          flex-col
+          gap-4;
+
+        li {
+          @apply
+            flex
+            w-full
+            items-center
+            gap-3
+            md:gap-4
+            2xl:gap-5;
+
+            & > div:first-of-type {
+              @apply
+                bg-gradient
+                rounded-xl;
+            };
+
+            .drawer-product-info {
+              @apply
+                flex
+                flex-col;
+
+              h3 {
+                @apply
+                  text-lg
+                  text-gray-300;
+              }
+        
+              & > div {
+                @apply
+                  mt-3
+                  flex
+                  items-center
+                  gap-1
+                  text-green-500
+                  text-base
+                  font-bold;
+
+                button {
+                  @apply
+                    disabled:cursor-not-allowed
+                    [&:not(:disabled)]:hover:text-green-300
+                    leading-5
+                    focus:px-2
+                    focus-visible:px-2
+                    rounded-md;
+                }
+              }
+            }
+         }
+      }
+    }
+
+    footer {
+      .footer-details {
+        @apply
+          flex 
+          flex-col 
+          gap-1
+          mb-8
+          2xl:gap-2
+          2xl:mb-12;
+
+        & > div {
+          @apply
+            flex
+            justify-between
+            text-lg
+            2xl:text-2xl
+            text-gray-100;
+        }
+
+        & > div:first-of-type {
+          @apply
+            text-base
+            2xl:text-xl
+            font-normal
+            text-gray-100;
+        };
+      }
+    }
+  }
+};

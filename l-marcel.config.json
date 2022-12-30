@@ -1,6 +1,8 @@
 {
   "translatedDescription": "Uma aplicação que utiliza a API do Stripe para simular compras em um mercado virtual.",
+  "pinned": true,
   "links": {
+    "self": "https://ignite-04-reactjs-2022-ignite-shop.vercel.app/",
     "figma": "https://www.figma.com/file/0iIYsr8gDtPg7Uu9MLMjPW/Ignite-Shop-(Copy)?node-id=0%3A1&t=m3S3hg8qhKxCPNb0-1"
   },
   "progress": 0.6,
@@ -11,6 +13,7 @@
     "Axios",
     "Stripe",
     "Tailwind",
+    "Radix UI",
     "Sass",
     "Eslint",
     "HTML",

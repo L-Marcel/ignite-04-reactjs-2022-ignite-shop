@@ -7,21 +7,16 @@ export const SliderContainer = w.main(`
 `, {});
 
 export const Product = w.article(`
-  bg-gradient-to-b
-  from-[#1ea483]
-  to-[#7465d4]
-  rounded-2xl
-  md:rounded-xl
-  xl:rounded-lg
+  bg-gradient
+  responsive-rounded-xl
   p-1
   cursor-pointer
-  relative
   flex
   items-center
   justify-center
-  min-w-[520px]
+  min-w-[vw30]
+  h-[70vh]
   product-item
-  mb-10
 `, {});
 
 export const ProductFooter = w.footer(`
@@ -30,9 +25,9 @@ export const ProductFooter = w.footer(`
   bottom-1
   left-1
   right-1
-  p-4
-  xl:p-5
-  2xl:p-8
+  p-3
+  xl:p-4
+  2xl:p-6
   rounded-xl
   md:rounded-lg
   xl:rounded-md

@@ -1,20 +1,15 @@
 import { AppProps } from "next/app";
-import { Header } from "../styles/layout/styles";
-import Image from "next/image";
-import logoImg from "../assets/Logo.svg";
-import "../styles/main.scss";
+import "../styles/global.scss";
+import { AppProvider } from "../context/providers/AppProvider";
+import { Header } from "../components/Header";
+import { Drawer } from "../components/Drawer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Header>
-        <Image
-          src={logoImg}
-          alt=""
-        />
-      </Header>
+    <AppProvider>
+      <Header/>
       <Component {...pageProps}/>
-    </>
+    </AppProvider>
   );
 }
 

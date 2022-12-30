@@ -14,13 +14,29 @@ export const ProductContainer = w.main(`
   product-container
 `, {});
 
+export const ImageTopRightCut = w.div(`
+  z-10
+  absolute
+  -top-1
+  -right-1
+  border-x-[8rem]
+  border-y-[8rem]
+  border-b-transparent
+  border-l-transparent
+  border-r-gray-900
+  border-t-gray-900
+  lg:border-x-[10rem]
+  lg:border-y-[10rem]
+`, {});
+
 export const ImageContainer = w.div(`
   w-min
   absolute
   right-0
   top-0
   -mt-36
-  -mr-8
+  -z-10
+  -mr-[calc(2rem+3px)]
   scale-50
   md:relative
   md:mt-0
@@ -31,15 +47,16 @@ export const ImageContainer = w.div(`
   lg:h-[calc(376px-0.5rem)]
   2xl:max-w-[576px]
   2xl:h-[calc(476px-0.5rem)]
-  bg-gradient-to-b
-  from-[#1ea483]
-  to-[#7465d4]
+  bg-gradient
   min-w-[270px]
   min-h-[270px]
   rounded-lg
   p-1
+  bg-transparent
   items-center
   justify-center
+  overflow-visible
+  md:overflow-hidden
 `, {});
 
 export const ProductDetails = w.div(`

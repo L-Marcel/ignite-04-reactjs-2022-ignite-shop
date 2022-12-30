@@ -1,0 +1,55 @@
+@layer components {
+  .success-container {
+    @apply
+      flex
+      flex-col
+      items-center
+      justify-start
+      my-0
+      mx-auto
+      h-[656px];
+
+    h1 {
+      @apply
+        text-2xl
+        font-bold
+        text-gray-100
+        mt-10;
+    }
+
+    p {
+      @apply
+        text-xl
+        text-gray-300
+        mx-8
+        max-w-[560px]
+        text-center
+        mt-8;
+    }
+
+    a {
+      @apply
+        block
+        mt-12
+        text-lg
+        text-green-500;
+
+      &:hover {
+        @apply
+          text-green-300;
+      }
+    }
+  }
+
+  .success-products-image {
+    @apply
+      flex
+      items-center
+      justify-center
+      rounded-full
+      bg-gradient
+      [&:not(:first-of-type)]:-ml-11;
+    
+    box-shadow: -15px 10px 40px black;
+  }
+}
