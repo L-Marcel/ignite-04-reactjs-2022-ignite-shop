@@ -1,10 +1,8 @@
 import Image from "next/image";
 import { SliderContainer, Product, ProductFooter } from "./styles";
-import { useKeenSlider } from "keen-slider/react";
 import Link from "next/link";
 import { ProductType } from "../../services/stripe";
 import { IconButton } from "../IconButton/index";
-import { SliderKeyboardControls } from "../../services/accessibility";
 import { MouseEvent } from "react";
 import { useSlider } from "../../context/hooks/useSlider";
 import { useProducts } from "../../context/hooks/useProducts";

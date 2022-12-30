@@ -37,7 +37,6 @@ export function Header() {
 
         {
           !needToUseAltHeader && 
-          <Dialog.Trigger asChild>
             <IconButton
               onClick={handleOnOpenDrawer}
               icon="Handbag"
@@ -50,7 +49,6 @@ export function Header() {
                 amount={productsAmount}
               />
             </IconButton>
-          </Dialog.Trigger>
         }
       </HeaderContainer>
     </Dialog.Root>

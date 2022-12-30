@@ -4,7 +4,6 @@ import { ImageContainer, ImageTopRightCut, ProductContainer, ProductDetails } fr
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useProducts } from "../../../context/hooks/useProducts";
-import { Icon } from "../../../components/Icon";
 import Link from "next/link";
 import { IconButton } from "../../../components/IconButton";
 import { Button } from "../../../components/Button";

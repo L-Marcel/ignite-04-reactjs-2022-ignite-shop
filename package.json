@@ -6,10 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --fix . --ext .js,.ts,.tsx,.jsx --fix"
   },
   "dependencies": {
-    "@next/font": "^13.1.1",
     "@radix-ui/react-dialog": "^1.0.2",
     "axios": "^1.2.2",
     "keen-slider": "^6.8.5",
