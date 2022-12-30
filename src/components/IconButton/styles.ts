@@ -23,11 +23,11 @@ export const IconButtonContainer = w.button(`
         2xl:text-[2rem]
       `,
       small: `
-        w-8
-        h-8
+        w-9
+        h-9
         text-lg
-        md:w-10
-        md:h-10
+        md:w-11
+        md:h-11
         md:text-xl
         2xl:w-12
         2xl:h-12
