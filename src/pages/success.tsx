@@ -54,7 +54,7 @@ export default function SuccessPage({
             <> suas <strong>{amount}</strong> camisetas já estão </>:
             <> sua camiseta <strong>{products[0].name}</strong> já está </>}
           a caminho da sua casa. Acho que você tem um bom gosto!</p>
-        <Link className="px-2 rounded-md" href="/">
+        <Link className="px-2 mb-7 rounded-md" href="/">
           Voltar ao catálogo
         </Link>
       </main>
