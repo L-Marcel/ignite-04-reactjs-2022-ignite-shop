@@ -5,7 +5,7 @@ export const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY || "", {
   apiVersion: "2022-11-15",
   appInfo: {
     name: "Ignite Shop"
-  }
+  },
 });
 
 export type ProductType = {
@@ -46,9 +46,8 @@ export type SessionType = {
 };
 
 export async function getSession(id: string): Promise<SessionType> {
-  await fetch("/", { cache: "no-store" });
-  const response = await stripe.checkout.sessions.retrieve(id, {
-    expand: ["line_items", "line_items.data.price.product"]
+  const response = await stripe.checkout.sessions.retrieve(String(id), {
+    expand: ["line_items", "line_items.data.price.product"],
   });
 
   const customerName = response.customer_details?.name as string;

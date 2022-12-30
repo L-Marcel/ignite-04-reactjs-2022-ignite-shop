@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { stripe } from "../../src/services/stripe";
+import { stripe } from "../../services/stripe";
 
 export default async function checkoutHandler(req: NextApiRequest, res: NextApiResponse) {
   const { defaultPriceId } = req.body;
