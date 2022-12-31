@@ -21,9 +21,9 @@ export function Slider({
   }
 
   function handleOnAddInCart(e: MouseEvent, product: ProductType) {
-    handleOnNavigate(e);
-    e.preventDefault();
     addProductAmount(product);
+    e.preventDefault();
+    handleOnNavigate(e);
   }
 
   return (

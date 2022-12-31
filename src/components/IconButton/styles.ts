@@ -51,12 +51,14 @@ export const IconButtonContainer = w.button(`
       default: `
         bg-gray-800
         text-gray-300
-        [&:not(:disabled)]:hover:bg-gray-700
+        [&:not(:disabled)]:active:bg-gray-700
+        [&:not(:disabled)]:landscape:hover:bg-gray-700
       `,
       green: `
         bg-green-500
         text-white
-        [&:not(:disabled)]:hover:bg-green-300
+        [&:not(:disabled)]:active:bg-green-300
+        [&:not(:disabled)]:landscape:hover:bg-green-300
       `
     }
   },

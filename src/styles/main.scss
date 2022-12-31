@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  button, svg, a {
+    user-select: none;
+    -webkit-highlight: none;
+  }
+
   *:focus, *:focus-visible {
     @apply
       outline-none
